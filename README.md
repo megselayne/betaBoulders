@@ -17,4 +17,4 @@ Find, save, edit, delete climbing routes
 - `seed.js` must be run in Heroku bash to seed climbing_routes table from third party API
 
 ## Table Schemas
-![DB_Schema] (https://github.com/megselayne/betaBoulders/assets/schema.png)
+![DB_Schema] (./assets/schema.png)
