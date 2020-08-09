@@ -15,3 +15,5 @@ Find, save, edit, delete climbing routes
 - Application will be deployed on Heroku
 - `db/migrations` files must be run in Heroku bash to set up tables
 - `seed.js` must be run in Heroku bash to seed climbing_routes table from third party API
+
+## Table Schemas
