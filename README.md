@@ -18,4 +18,4 @@ Find, save, edit, delete climbing routes
 
 ## Table Schemas
 
-![DB_Schema] (./assets/schema.png)
+![DBSchema](./assets/schema.png)
