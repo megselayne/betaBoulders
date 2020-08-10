@@ -12,7 +12,7 @@ Find, save, edit, delete climbing routes
 - User can log out
 
 ## Trello Board
-- Will be built out [here](https://trello.com/b/vKJm1pRX/betaboulders) 
+- Access user stories and technical implementation details [here](https://trello.com/b/vKJm1pRX/betaboulders) 
 
 ## Front end Wireframes
 - Table sketch source [template](https://www.sketchappsources.com/free-source/3142-responsive-table-template-sketch-freebie-resource.html)
