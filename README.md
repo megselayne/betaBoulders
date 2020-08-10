@@ -15,7 +15,12 @@ Find, save, edit, delete climbing routes
 - Will be built out [here](https://trello.com/b/vKJm1pRX/betaboulders) 
 
 ## Front end Wireframes
-- In-progress
+- Table sketch source [template](https://www.sketchappsources.com/free-source/3142-responsive-table-template-sketch-freebie-resource.html)
+ <br>
+![home](./assets/home_index.ejs.png)
+![routes_home](./assets/routes_index.ejs.png)
+![routes_show](./assets/routes_show.ejs.png)
+![routes_edit](./assets/routes_edit.ejs.png)
 ## Table Schemas
 
 ![DBSchema](./assets/schema.png)
@@ -35,9 +40,11 @@ Find, save, edit, delete climbing routes
 |Save route to profile|`POST /users/:id/user_routes`|
 |Log out|`GET /auth/logout`|
 
-
 ## Notes on Deployment
 - Application will be deployed on Heroku
 - `db/migrations` files must be run in Heroku bash to set up tables.
 - `seed.js` must be run in Heroku bash to seed the `climbing_routes` table from Mountain Project's API.
 - The `SECRET_KEY` in `seed.js` is supressed in an `.env`. You will need to request your own credentials from Mountain Project and add the key in your own `.env` file.
+
+## Links and Resources
+- Mountain Project API [here](https://www.mountainproject.com/data)
