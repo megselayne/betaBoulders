@@ -11,7 +11,11 @@ Find, save, edit, delete climbing routes
 - User can remove routes from their profile
 - User can log out
 
+## Trello Board
+- Will be built out [here](https://trello.com/b/vKJm1pRX/betaboulders) 
 
+## Front end Wireframes
+- In-progress
 ## Table Schemas
 
 ![DBSchema](./assets/schema.png)
