@@ -20,13 +20,20 @@ Find, save, edit, delete climbing routes
 |User Story|Route|
 |-|-|
 |See all routes|`GET /routes`|
-|See route details|`GET /routes/:id([0-9]+)`|
+|See route details|`GET /routes/:id`|
+|Edit a route|`PUT /routes/:id`|
+|Add a route|`POST /routes`|
+|Delete a route|`DELETE /routes/:id`|
+|Access create account page|`GET /users/new`|
 |Create an account|`POST /users`|
-|Log in|`GET /auth/login`|
+|Access log in page|`GET /auth/login`|
+|Log in|`POST /auth/login`|
 |Save route to profile|`POST /users/:id/user_routes`|
-|
+|Log out|`GET /auth/logout`|
 
-## Deployment
+
+## Notes on Deployment
 - Application will be deployed on Heroku
-- `db/migrations` files must be run in Heroku bash to set up tables
-- `seed.js` must be run in Heroku bash to seed climbing_routes table from third party API
+- `db/migrations` files must be run in Heroku bash to set up tables.
+- `seed.js` must be run in Heroku bash to seed the `climbing_routes` table from Mountain Project's API.
+- The `SECRET_KEY` in `seed.js` is supressed in an `.env`. You will need to request your own credentials from Mountain Project and add the key in your own `.env` file.
