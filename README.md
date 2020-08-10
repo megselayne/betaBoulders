@@ -11,6 +11,21 @@ Find, save, edit, delete climbing routes
 - User can remove routes from their profile
 - User can log out
 
+## Phases of Completion
+1. No-auth features first
+    1. All routes
+    2. Seed db with 3rd party API
+    3. View route for more details
+2. Auth features second
+    1. Edit, add, delete routes
+    2. Create account
+    3. Login, log out
+3. User Profile
+    1. Add route(s) to profile
+    2. view route(s) on profile
+    3. Remove routes from profile
+- The logic is that if auth goes horribly wrong (I think I'll be fine), I will fulfill reqs with just phase 1 and adding edit, delete, add with no auth required.
+
 ## Trello Board
 - Access user stories and technical implementation details [here](https://trello.com/b/vKJm1pRX/betaboulders) 
 
