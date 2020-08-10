@@ -11,11 +11,22 @@ Find, save, edit, delete climbing routes
 - User can remove routes from their profile
 - User can log out
 
-## Deployment
-- Application will be deployed on Heroku
-- `db/migrations` files must be run in Heroku bash to set up tables
-- `seed.js` must be run in Heroku bash to seed climbing_routes table from third party API
 
 ## Table Schemas
 
 ![DBSchema](./assets/schema.png)
+
+## CRUD Routes
+|User Story|Route|
+|-|-|
+|See all routes|`GET /routes`|
+|See route details|`GET /routes/:id([0-9]+)`|
+|Create an account|`POST /users`|
+|Log in|`GET /auth/login`|
+|Save route to profile|`POST /users/:id/user_routes`|
+|
+
+## Deployment
+- Application will be deployed on Heroku
+- `db/migrations` files must be run in Heroku bash to set up tables
+- `seed.js` must be run in Heroku bash to seed climbing_routes table from third party API
