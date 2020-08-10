@@ -16,6 +16,7 @@ Find, save, edit, delete climbing routes
 
 ## Front end Wireframes
 - Table sketch source [template](https://www.sketchappsources.com/free-source/3142-responsive-table-template-sketch-freebie-resource.html)
+- Full-res wireframes [here](./assets/full_res_wireframes)
 
 ![home](./assets/home_index.ejs.png)
 ![routes_home](./assets/routes_index.ejs.png)
