@@ -27,7 +27,7 @@ Find, save, edit, delete climbing routes
 - The logic is that if auth goes horribly wrong (I think I'll be fine), I will fulfill reqs with just phase 1 and adding edit, delete, add with no auth required.
 
 ## Trello Board
-- Access user stories and technical implementation details [here](https://trello.com/b/vKJm1pRX/betaboulders) 
+- Access user stories and technical implementation details [here](https://trello.com/invite/b/vKJm1pRX/8fdab09e74006de0cfe26ef66d741338/betaboulders) 
 
 ## Front end Wireframes
 - Table sketch source [template](https://www.sketchappsources.com/free-source/3142-responsive-table-template-sketch-freebie-resource.html)
