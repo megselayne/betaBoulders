@@ -11,6 +11,15 @@ const climbingRouteController ={
             });
         })
         .catch(next);
+    },
+    show(req, res, next) {
+        ClimbingRoute.getById(req.params.id)
+        .then((climb) => {
+            res.locals.climb = climb;
+            console.log(res.locals.climb);
+            next();
+        })
+        .catch(next);
     }
 }
 

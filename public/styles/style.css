@@ -3,6 +3,7 @@ body{
 }
 h1{
     color: #000;
+    font-size: 3em;
 }
 .page{
     font-family: sans-serif;
@@ -37,12 +38,19 @@ nav ul li{
     color: white;
     margin: 5px;
 }
-a{
+.secondary{
     text-decoration: none;
     color: white;
 }
+.primary{
+   color: #14213D; 
+   font-weight: bold;
+}
 img{
     height:50px;
+}
+.climb-img{
+    height: 10em;
 }
 .click{
     background-color: #fca311;
@@ -68,6 +76,16 @@ td, th{
 }
 tr:nth-child(even) {
     background-color: #dddddd;
+}
+.col-row{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 60vw;
+}
+.main-column{
+    display:flex;
+    flex-direction: column;
 }
 footer{
     height: 70px;

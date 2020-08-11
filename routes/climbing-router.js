@@ -4,7 +4,11 @@ const climbingRouteController = require('../controllers/climbing_routes_controll
 
 
 climbingRouter.get('/', climbingRouteController.index);
-
+climbingRouter.get('/:id([0-9]+)', climbingRouteController.show, (req, res) =>{
+    res.render('climbingRoutes/show', {
+        climb: res.locals.climb,
+    });
+})
 
 
 

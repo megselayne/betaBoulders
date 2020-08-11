@@ -9,7 +9,7 @@
         <% data.climbs.map((element) => { %>
             <tr>
                 <td>
-                    <%= element.name %>
+                    <a class='primary' href='/routes/<%= element.id %>'> <%= element.name %> </a>
                 </td>
                 <td>
                     <%= element.type %>
