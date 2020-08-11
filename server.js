@@ -9,7 +9,7 @@ const passport = require('passport');
 //routers here
 
 
-//app
+//app initialize
 const app = express();
 //.env
 require('dotenv').config();
