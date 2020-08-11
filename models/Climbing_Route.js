@@ -10,6 +10,14 @@ class ClimbingRoute {
         this.longitude = climb.longitude || null;
         this.latitude = climb.latitude || null;
     }
+    static getAll() {
+        return db.manyOrNone(`SELECT * FROM climbing_routes ORDER BY id ASC`)
+        .then((climbs) => {
+            climbs.map((climb) => {
+                return new this(climb);
+            })
+        })
+    }
     static getById(id) {
         return db.oneOrNone(` SELECT * FROM climbing_routes WHERE id = $1`, id)
         .then((climb) => {
@@ -30,6 +38,29 @@ class ClimbingRoute {
         .then((climb) => {
             return Object.assign(this, climb);
         })
+    }
+    update(changes) {
+        Object.assign(this, changes);
+        return db.oneOrNone(
+            `
+            UPDATE climbing_routes
+                name = $/name/,
+                type = $/type/,
+                rating = $/rating/,
+                image = $/image/,
+                longitude = $/longitude/,
+                latitude = $/latitude/
+            WHERE id = $/id/
+            RETURNING *
+            `, this
+        )
+        .then((climb) => {
+            return Object.assign(this, climb);
+        });
+    }
+
+    delete() {
+        return db.oneOrNone(`DELETE FROM climbing_routes WHERE id = $1`, this.id);
     }
 }
 
