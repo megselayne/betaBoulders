@@ -7,7 +7,7 @@ const session = require('express-session');
 const passport = require('passport');
 
 //routers here
-
+const climbingRouter = require('./routes/climbing-router');
 
 //app initialize
 const app = express();
@@ -43,13 +43,13 @@ app.listen(PORT, () => {
 });
 
 app.get('/' ,(req, res) => {
-    res.json({
-        appName: 'BetaBoulders'
+    res.render('index',{
+        appName: 'BetaBoulders',
     });
 });
 
 //app.use rotuers
-
+app.use('/routes', climbingRouter);
 
 app.use('*', (req,res) =>{
     res.status(404).send('Not Found');
