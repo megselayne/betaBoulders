@@ -13,7 +13,7 @@ class ClimbingRoute {
     static getAll() {
         return db.manyOrNone(`SELECT * FROM climbing_routes ORDER BY id ASC`)
         .then((climbs) => {
-            climbs.map((climb) => {
+            return climbs.map((climb) => {
                 return new this(climb);
             })
         })

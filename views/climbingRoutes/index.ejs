@@ -1,0 +1,27 @@
+<%- include('../partials/boilerplate') %>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Rating</th>
+            <!-- <th>Add to Profile</th> -->
+        </tr>
+        <% data.climbs.map((element) => { %>
+            <tr>
+                <td>
+                    <%= element.name %>
+                </td>
+                <td>
+                    <%= element.type %>
+                </td>
+                <td>
+                    <%= element.rating %>
+                </td>
+            </tr>
+
+        <% }) %>
+    </table>   
+
+
+
+<%- include('../partials/end') %>
