@@ -39,6 +39,22 @@ class ClimbingRoute {
             return Object.assign(this, climb);
         })
     }
+    saveMany(){
+        return db.manyOrNone(
+            `
+            INSERT INTO climbing_routes
+            (name, type, rating, image, longitude, latitude)
+            VALUES
+            ($/name/, $/type/, $/rating/, $/image/, $/longitude/, $/latitude/)
+            RETURNING *
+            `, this
+        )
+        .then((climbs) =>{
+            climbs.map((climb) => {
+                return Object.assign(this, climb);
+            })
+        })
+    }
     update(changes) {
         Object.assign(this, changes);
         return db.oneOrNone(
