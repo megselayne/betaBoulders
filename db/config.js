@@ -1,3 +1,4 @@
+require('dotenv').config();
 const DB_NAME = process.env.DB_NAME || "climbing_dev";
 
 const options = {
@@ -8,8 +9,17 @@ const options = {
 
 const pgp = require('pg-promise')(options);
 
-module.exports = pgp({
-  database: DB_NAME,
-  port: 5432,
-  host: 'localhost',
-});
+function setDatabase() {
+  if(process.env.NODE_ENV === 'development' || !process.env.NODE_ENV) {
+    return pgp({
+      database: DB_NAME,
+      port: 5432,
+      host: 'localhost',
+    })
+  } 
+  else {
+    return pgp(process.env.DATABASE_URL)
+  }
+}
+
+module.exports = setDatabase();
