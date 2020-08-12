@@ -8,7 +8,11 @@ climbingRouter.get('/:id([0-9]+)', climbingRouteController.show, (req, res) =>{
     res.render('climbingRoutes/show', {
         climb: res.locals.climb,
     });
+});
+climbingRouter.get('/add', (req, res) =>{
+    res.render('climbingRoutes/add');
 })
+climbingRouter.post('/',climbingRouteController.create);
 
 
 

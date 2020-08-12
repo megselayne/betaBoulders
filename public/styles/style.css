@@ -87,6 +87,15 @@ tr:nth-child(even) {
     display:flex;
     flex-direction: column;
 }
+input[type=text], input[type=password], input[type=email]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
 footer{
     height: 70px;
     text-align: center;

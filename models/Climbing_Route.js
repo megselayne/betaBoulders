@@ -6,7 +6,7 @@ class ClimbingRoute {
         this.name = climb.name;
         this.type = climb.type;
         this.rating = climb.rating;
-        this.image = climb.image;
+        this.image = climb.image || null;
         this.longitude = climb.longitude || null;
         this.latitude = climb.latitude || null;
     }

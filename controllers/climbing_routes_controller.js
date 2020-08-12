@@ -20,6 +20,21 @@ const climbingRouteController ={
             next();
         })
         .catch(next);
+    },
+    create(req, res, next) {
+        new ClimbingRoute({
+            name: req.body.name,
+            type: req.body.type,
+            rating: req.body.rating,
+            image: req.body.image,
+            longitude: req.body.latitude,
+            latitude: req.body.latitude
+        })
+        .save()
+        .then((climb) =>{
+            res.redirect('/routes');
+        })
+        .catch(next);
     }
 }
 
