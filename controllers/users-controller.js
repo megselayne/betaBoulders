@@ -3,8 +3,7 @@ const User = require('../models/User');
 
 const usersController = {
     index(req, res, next) {
-        res.json({
-            message: 'Put a user profile page on this route',
+        res.render('users/user', {
             data: { user: req.user}
         });
     },

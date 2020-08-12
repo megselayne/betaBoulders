@@ -1,7 +1,7 @@
 const express = require('express');
 const climbingRouter = express.Router();
 const climbingRouteController = require('../controllers/climbing_routes_controller');
-
+const authHelpers = require('../services/auth/auth-helpers');
 
 climbingRouter.get('/', climbingRouteController.index);
 climbingRouter.get('/:id([0-9]+)', climbingRouteController.show, (req, res) => {
@@ -9,20 +9,21 @@ climbingRouter.get('/:id([0-9]+)', climbingRouteController.show, (req, res) => {
         climb: res.locals.climb,
     });
 });
-climbingRouter.get('/add', (req, res) =>{
+climbingRouter.get('/add', authHelpers.loginRequired, (req, res) =>{
     res.render('climbingRoutes/add');
 })
-climbingRouter.get('/:id([0-9]+)/edit', climbingRouteController.show, (req, res) => {
-    res.render('climbingRoutes/edit', {
-        climb: res.locals.climb,
-    });
+climbingRouter.get('/:id([0-9]+)/edit',
+    authHelpers.loginRequired,
+    climbingRouteController.show, (req, res) => {
+        res.render('climbingRoutes/edit', {
+            climb: res.locals.climb,
+        });
 });
 climbingRouter.post('/',climbingRouteController.create);
 climbingRouter.put('/:id([0-9]+)', climbingRouteController.update);
-climbingRouter.delete('/:id([0-9]+)', climbingRouteController.destroy);
-
-
-
+climbingRouter.delete('/:id([0-9]+)', 
+    authHelpers.loginRequired, 
+    climbingRouteController.destroy);
 
 
 
