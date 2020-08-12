@@ -35,6 +35,16 @@ const climbingRouteController ={
             res.redirect('/routes');
         })
         .catch(next);
+    },
+    update(req, res, next) {
+        ClimbingRoute.getById(req.params.id)
+        .then((climb) => {
+            return climb.update(req.body);
+        })
+        .then((updatedClimb) => {
+            res.redirect(`routes/${updatedClimb.id}`)
+        })
+        .catch(next);
     }
 }
 
