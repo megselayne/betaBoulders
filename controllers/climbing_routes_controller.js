@@ -45,6 +45,15 @@ const climbingRouteController ={
             res.redirect(`routes/${updatedClimb.id}`)
         })
         .catch(next);
+    },
+    destroy(req, res, next) {
+        ClimbingRoute.getById(req.params.id)
+        .then((climb) =>{
+            return climb.delete();
+        })
+        .then(() => {
+            res.redirect(`/routes`);
+        });
     }
 }
 

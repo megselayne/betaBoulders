@@ -21,9 +21,9 @@
             <button class='click big'>
                 <a class='secondary' href='/routes/<%= climb.id %>/edit'>Edit</a>
             </button>
-            <button class='click big'>
-                <a class='secondary' href='#'>Delete</a>
-            </button>
+            <form method="POST" action="/routes/<%= climb.id %>?_method=DELETE">
+                <input class='click big' type="submit" value="Delete">
+            </form>
         </div>
     </div>
     <div class ='main-column'>

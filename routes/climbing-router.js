@@ -19,6 +19,7 @@ climbingRouter.get('/:id([0-9]+)/edit', climbingRouteController.show, (req, res)
 });
 climbingRouter.post('/',climbingRouteController.create);
 climbingRouter.put('/:id([0-9]+)', climbingRouteController.update);
+climbingRouter.delete('/:id([0-9]+)', climbingRouteController.destroy);
 
 
 
