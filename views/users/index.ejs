@@ -1,12 +1,14 @@
 <%- include('../partials/boilerplate') %>
+
+    <h2><%= data.user.username %>'s Routes</h2>
     <table>
         <tr>
             <th>Name</th>
             <th>Type</th>
             <th>Rating</th>
-            <th>Add to Profile</th>
+            <!-- <th>Add to Profile</th> -->
         </tr>
-        <% data.climbs.map((element) => { %>
+        <% data.routes.map((element) => { %>
             <tr>
                 <td>
                     <a class='primary' href='/routes/<%= element.id %>'> <%= element.name %> </a>
@@ -17,16 +19,9 @@
                 <td>
                     <%= element.rating %>
                 </td>
-                <td>
-                    <form method="POST" action="/userRoute/<%= element.id %>">
-                        <input class='click big' type="submit" value="Add">
-                    </form>
-                </td>
             </tr>
 
         <% }) %>
     </table>   
-
-
 
 <%- include('../partials/end') %>

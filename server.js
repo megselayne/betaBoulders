@@ -10,6 +10,7 @@ const passport = require('passport');
 const climbingRouter = require('./routes/climbing-router');
 const authRouter = require('./routes/auth-router');
 const userRouter = require('./routes/user-router');
+const userRouteRouter = require('./routes/userRoute-router');
 
 //app initialize
 const app = express();
@@ -53,7 +54,9 @@ app.get('/' ,(req, res) => {
 //app.use rotuers
 app.use('/routes', climbingRouter);
 app.use('/auth', authRouter);
+app.use('/userRoute', userRouteRouter);
 app.use('/user', userRouter);
+
 
 app.use('*', (req,res) =>{
     res.status(404).send('Not Found');

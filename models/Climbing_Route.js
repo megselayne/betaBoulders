@@ -2,7 +2,7 @@ const db = require('../db/config');
 
 class ClimbingRoute {
     constructor(climb) {
-        this.id = climb.id || null;
+        this.id = climb.id;
         this.name = climb.name;
         this.type = climb.type;
         this.rating = climb.rating;

@@ -1,12 +1,21 @@
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
+const UserRoutes = require('../models/UserRoutes');
 
 const usersController = {
     index(req, res, next) {
-        res.render('users/user', {
-            data: { user: req.user}
-        });
-    },
+        UserRoutes.getAllByUserId(req.user.id)
+        .then((routes) => {
+            console.log(routes);
+          res.render('users/index',{
+             data: {
+              user: req.user,
+              routes,
+            },
+          });
+        })
+        .catch(next);
+      },
     create(req, res, next) {
         const salt = bcrypt.genSaltSync();
         const hash = bcrypt.hashSync(req.body.password, salt);
