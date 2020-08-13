@@ -11,6 +11,6 @@ userRouteRouter.get('/edit/:id([0-9]+)', userRoutesController.show, (req, res) =
     });
 });
 userRouteRouter.put('/:id([0-9]+)', userRoutesController.update);
-userRouteRouter.delete('/:id([0-9]+)', authHelpers.loginRequired, userRoutesController.destroy);
+userRouteRouter.delete('/:id([0-9]+)', userRoutesController.destroy);
 
 module.exports = userRouteRouter;

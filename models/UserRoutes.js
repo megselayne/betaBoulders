@@ -29,7 +29,9 @@ class UserRoutes {
     static getAllByUserId(id) {
         return db.manyOrNone(
         `SELECT
-            climbing_routes.id,
+            user_routes.id,
+            user_routes.user_id,
+            user_routes.route_id,
             climbing_routes.name,
             climbing_routes.type,
             climbing_routes.rating,
@@ -81,7 +83,7 @@ class UserRoutes {
     }
 
     delete() {
-        return db.oneOrNone(`DELETE FROM user_rooutes WHERE id = $1`, this.id);
+        return db.oneOrNone(`DELETE FROM user_routes WHERE id = $1`, this.id);
     }
 }
 

@@ -70,7 +70,8 @@ img{
     height:50px;
 }
 .climb-img{
-    height: 10em;
+    height: 20em;
+    width:auto;
 }
 .click{
     /* background-color: #fca311; */
@@ -100,7 +101,7 @@ tr:nth-child(even) {
 .row{
     display:flex;
     flex-direction: row;
-    justify-content: center;
+
 }
 .col-row{
     display:flex;
@@ -111,6 +112,38 @@ tr:nth-child(even) {
 .main-column{
     display:flex;
     flex-direction: column;
+    flex-wrap: wrap;
+
+}
+.route-buttons{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.profile-container{
+    margin: 10px;
+}
+.profile-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%; 
+    border: 2px solid #14213d;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+.profile-column{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    height: 25vh;
+    flex: 1;
+}
+.profile-img{
+    height: 100%;
+}
+.margin-fix{
+    margin:2px;
 }
 input[type=text], input[type=password], input[type=email]{
     width: 100%;

@@ -1,41 +1,33 @@
 <%- include('../partials/boilerplate') %>
-
+<div class ='profile-name'>
     <h2><%= data.user.username %>'s Routes</h2>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Rating</th>
-            <th>Status</th>
-            <th>Notes</th>
-            <th>Update</th>
-            
-            <!-- <th>Add to Profile</th> -->
-        </tr>
-        <% data.routes.map((element) => { %>
-            <tr>
-                <td>
-                    <p class='primary-text'> <%= element.name %> </p>
-                </td>
-                <td>
-                    <%= element.type %>
-                </td>
-                <td>
-                    <%= element.rating %>
-                </td>
-                <td>
-                    <%= element.status %>
-                </td>
-                <td>
-                    <%= element.notes %>
-                </td>
-                <td>
+</div>
+<div class='profile-container'>
+    <% data.routes.map((element) => { %>
+        <div class='profile-row'>
+            <div class='profile-column'>
+                <h2 class='margin-fix'><%= element.name %></h2>
+                <h3 class='margin-fix'><%= element.rating %></h2>
+                <div class='row'>
                     <button class='click primary'>
-                        <a class='secondary-text' href='userRoute/edit/<%= element.id %>'>Update</a>
+                        <a class='secondary-text' href='userRoute/edit/<%= element.id %>'>Edit</a>
                     </button>
-                </td>
-            </tr>
-        <% }) %>
-    </table>  
+                    <form method="POST" action="/userRoute/<%= element.id %>?_method=DELETE">
+                        <input class='click primary' type="submit" value="Delete">
+                    </form>
+                </div>
+            </div>
+            <div class='profile-column'>
+                <h2 class='margin-fix'>Status:</h2>
+                <h5 class='margin-fix'><%= element.status %></h2>
+                <h2 class='margin-fix'>Notes:</h2>
+                <h5 class='margin-fix'><%= element.notes %></h2>
+            </div>
+            <div class='profile-column'>
+                <img class='profile-img' src='<%= element.image %>' />
+            </div>
+        </div>
+   <% }) %>
+</div>    
 
 <%- include('../partials/end') %>

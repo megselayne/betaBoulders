@@ -15,14 +15,14 @@
             </div>
         </div>
         <div class='route-buttons'>
-            <button class='click big'>
-                <a class='secondary' href='/routes'>All Climbs</a>
+            <button class='click big primary'>
+                <a class='secondary-text' href='/routes'>All Climbs</a>
             </button>
-            <button class='click big'>
-                <a class='secondary' href='/routes/<%= climb.id %>/edit'>Edit</a>
+            <button class='click big primary'>
+                <a class='secondary-text' href='/routes/<%= climb.id %>/edit'>Edit</a>
             </button>
             <form method="POST" action="/routes/<%= climb.id %>?_method=DELETE">
-                <input class='click big' type="submit" value="Delete">
+                <input class='click big primary' type="submit" value="Delete">
             </form>
         </div>
     </div>
