@@ -48,6 +48,7 @@ app.listen(PORT, () => {
 app.get('/' ,(req, res) => {
     res.render('index',{
         appName: 'BetaBoulders',
+        user: req.user
     });
 });
 

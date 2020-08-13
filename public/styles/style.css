@@ -2,7 +2,7 @@ body{
     margin:0;
 }
 h1{
-    color: #000;
+    color: white;
     font-size: 3em;
 }
 .page{
@@ -30,6 +30,16 @@ header,footer{
     align-items: center;
 
 }
+.cover{
+    background-image: url('../imgs/pexels-eberhard-grossgasteiger-673018.jpg');
+    background-size: cover;
+    height:93vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 nav ul{
     display: flex;
     list-style: none;
@@ -38,9 +48,13 @@ nav ul li{
     color: white;
     margin: 5px;
 }
+.active{
+    border-bottom: 3px solid #fca311;;
+}
 .secondary{
     text-decoration: none;
     color: white;
+    font-size: 1.5em;
 }
 .primary{
    color: #14213D; 
@@ -62,7 +76,7 @@ img{
     border-radius: 2px;
 }
 .big{
-    padding: .5em 1.5em;
+    padding: 1em 2em;
 }
 table{
     width:70%;
@@ -76,6 +90,11 @@ td, th{
 }
 tr:nth-child(even) {
     background-color: #dddddd;
+}
+.row{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
 }
 .col-row{
     display:flex;
