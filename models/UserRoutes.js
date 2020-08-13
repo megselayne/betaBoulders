@@ -6,9 +6,18 @@ class UserRoutes {
         this.id = params.id || null;
         this.user_id = params.user_id;
         this.route_id = params.route_id;
+        // this.name = params.name;
+        // this.rating = params.rating;
+        // this.image = params.image || null;
+        // this.longitude = params.longitude || null;
+        // this.latitude = params.latitude || null;
+        // this.status = params.status || 'not sent';
+        // this.notes = params.notes || null;
 
     }
-
+    static getAll(id){
+        return db.manyOrNone(`SELECT * FROM user_routes WHERE user_id = $1`, id)
+    }
     static getAllByUserId(id) {
         return db.manyOrNone(
         `SELECT
