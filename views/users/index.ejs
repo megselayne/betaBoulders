@@ -6,6 +6,8 @@
             <th>Name</th>
             <th>Type</th>
             <th>Rating</th>
+            <th>Status</th>
+            <th>Notes</th>
             
             <!-- <th>Add to Profile</th> -->
         </tr>
@@ -20,24 +22,14 @@
                 <td>
                     <%= element.rating %>
                 </td>
+                <td>
+                    <%= element.status %>
+                </td>
+                <td>
+                    <%= element.notes %>
+                </td>
             </tr>
         <% }) %>
-    </table>  
-    <table>
-        <tr>
-            <th>Status</th>
-            <th>Notes</th>
-        </tr>
-        <% data.userRoutes.map((element) => { %>
-        <tr>
-            <td>
-                <%= element.status %>     
-            </td>
-            <td>
-                <%= element.notes %>
-            </td>
-        </tr>
-       <% }) %>
     </table>  
 
 <%- include('../partials/end') %>

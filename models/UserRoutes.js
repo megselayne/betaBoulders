@@ -6,13 +6,13 @@ class UserRoutes {
         this.id = params.id || null;
         this.user_id = params.user_id;
         this.route_id = params.route_id;
-        // this.name = params.name;
-        // this.rating = params.rating;
-        // this.image = params.image || null;
-        // this.longitude = params.longitude || null;
-        // this.latitude = params.latitude || null;
-        // this.status = params.status || 'not sent';
-        // this.notes = params.notes || null;
+        this.name = params.name;
+        this.rating = params.rating;
+        this.image = params.image || null;
+        this.longitude = params.longitude || null;
+        this.latitude = params.latitude || null;
+        this.status = params.status || 'not sent';
+        this.notes = params.notes || null;
 
     }
     static getAll(id){
@@ -27,7 +27,9 @@ class UserRoutes {
             climbing_routes.rating,
             climbing_routes.image,
             climbing_routes.longitude,
-            climbing_routes.latitude
+            climbing_routes.latitude,
+            user_routes.status,
+            user_routes.notes
         FROM user_routes
         LEFT JOIN climbing_routes
         ON climbing_routes.id = user_routes.route_id
@@ -35,7 +37,7 @@ class UserRoutes {
         )
         .then((userRoutes) => {
             return userRoutes.map((userRoute) => {
-                return new ClimbingRoute(userRoute);
+                return new UserRoutes(userRoute);
             })
         })
     }
@@ -44,9 +46,9 @@ class UserRoutes {
         return db.one(
             `
             INSERT INTO user_routes
-            (user_id, route_id)
+            (user_id, route_id, status, notes)
             VALUES
-            ($/user_id/,$/route_id/)
+            ($/user_id/,$/route_id/, $/status/, $/notes/)
             returning *
             `, this
         )
