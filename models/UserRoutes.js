@@ -7,6 +7,7 @@ class UserRoutes {
         this.user_id = params.user_id;
         this.route_id = params.route_id;
         this.name = params.name;
+        this.type = params.type;
         this.rating = params.rating;
         this.image = params.image || null;
         this.longitude = params.longitude || null;
@@ -56,6 +57,10 @@ class UserRoutes {
             return Object.assign(this, userRoute);
         })
     }
+
+    // update(changes) {
+    //     return 
+    // }
 }
 
 

@@ -8,13 +8,14 @@
             <th>Rating</th>
             <th>Status</th>
             <th>Notes</th>
+            <th>Update</th>
             
             <!-- <th>Add to Profile</th> -->
         </tr>
         <% data.routes.map((element) => { %>
             <tr>
                 <td>
-                    <a class='primary' href='/routes/<%= element.id %>'> <%= element.name %> </a>
+                    <a class='primary-text' href='/routes/<%= element.id %>'> <%= element.name %> </a>
                 </td>
                 <td>
                     <%= element.type %>
@@ -27,6 +28,11 @@
                 </td>
                 <td>
                     <%= element.notes %>
+                </td>
+                <td>
+                    <button class='click primary'>
+                        <a class='secondary-text' href='userRoutes/edit/<%= element.id %>'>Update</a>
+                    </button>
                 </td>
             </tr>
         <% }) %>

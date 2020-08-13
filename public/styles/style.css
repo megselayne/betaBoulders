@@ -49,16 +49,22 @@ nav ul li{
     margin: 5px;
 }
 .active{
-    border-bottom: 3px solid #fca311;;
+    border-bottom: 3px solid #fca311;
 }
 .secondary{
+    font-size: 1.5em;
+    background-color: #14213d;
+}
+.secondary-text{
     text-decoration: none;
     color: white;
-    font-size: 1.5em;
 }
 .primary{
-   color: #14213D; 
    font-weight: bold;
+   background-color: #fca311;
+}
+.primary-text{
+    color: #14213D; 
 }
 img{
     height:50px;
@@ -67,7 +73,7 @@ img{
     height: 10em;
 }
 .click{
-    background-color: #fca311;
+    /* background-color: #fca311; */
     margin: .25em;
     padding: .25em;
     text-decoration: none;
@@ -116,6 +122,14 @@ input[type=text], input[type=password], input[type=email]{
     box-sizing: border-box;
   }
 footer{
-    height: 70px;
+    font-family: sans-serif;
+    height: 80px;
     text-align: center;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+p{
+    color: white;
 }
