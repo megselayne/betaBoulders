@@ -19,6 +19,13 @@ class UserRoutes {
     static getAll(id){
         return db.manyOrNone(`SELECT * FROM user_routes WHERE user_id = $1`, id)
     }
+    static getByRouteId(id){
+        return db.oneOrNone(`SELECT * FROM user_routes WHERE id = $1`, id)
+        .then((userRoute) => {
+            if(userRoute) return new this(userRoute);
+            throw new Error('User route not found');
+        });
+    }
     static getAllByUserId(id) {
         return db.manyOrNone(
         `SELECT
@@ -58,11 +65,25 @@ class UserRoutes {
         })
     }
 
-    // update(changes) {
-    //     return 
-    // }
-}
+    update(changes) {
+        Object.assign(this, changes);
+        return db.oneOrNone(`
+        UPDATE user_routes
+            status = $/status/,
+            notes = $/notes/
+        WHERE id = $/id/
+        RETURNING *
+        `, this
+        )
+        .then((userRoute) => {
+            return Object.assign(this, userRoute);
+        });
+    }
 
+    delete() {
+        return db.oneOrNone(`DELETE FROM user_rooutes WHERE id = $1`, this.id);
+    }
+}
 
 
 

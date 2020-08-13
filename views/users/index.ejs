@@ -15,7 +15,7 @@
         <% data.routes.map((element) => { %>
             <tr>
                 <td>
-                    <a class='primary-text' href='/routes/<%= element.id %>'> <%= element.name %> </a>
+                    <p class='primary-text'> <%= element.name %> </p>
                 </td>
                 <td>
                     <%= element.type %>
@@ -31,7 +31,7 @@
                 </td>
                 <td>
                     <button class='click primary'>
-                        <a class='secondary-text' href='userRoutes/edit/<%= element.id %>'>Update</a>
+                        <a class='secondary-text' href='userRoute/edit/<%= element.id %>'>Update</a>
                     </button>
                 </td>
             </tr>
