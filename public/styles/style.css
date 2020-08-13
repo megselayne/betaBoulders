@@ -123,6 +123,14 @@ tr:nth-child(even) {
 .profile-container{
     margin: 10px;
 }
+.relative{
+    position:relative;
+}
+.absolute{
+    position:absolute;
+    top: 10%;
+    left:5%;
+}
 .profile-row{
     display: flex;
     flex-direction: row;

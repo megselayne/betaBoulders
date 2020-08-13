@@ -17,13 +17,16 @@
                     </form>
                 </div>
             </div>
-            <div class='profile-column'>
-                <h2 class='margin-fix'>Status:</h2>
-                <h5 class='margin-fix'><%= element.status %></h2>
-                <h2 class='margin-fix'>Notes:</h2>
-                <h5 class='margin-fix'><%= element.notes %></h2>
-            </div>
-            <div class='profile-column'>
+            <!-- <div class='profile-column'>
+                
+            </div> -->
+            <div class='profile-column relative'>
+                <div class ='absolute'>
+                    <h2 class='margin-fix secondary-text'>Status:</h2>
+                    <h5 class='margin-fix secondary-text'><%= element.status %></h2>
+                    <h2 class='margin-fix secondary-text'>Notes:</h2>
+                    <h5 class='margin-fix'><%= element.notes %></h2>
+                </div>
                 <img class='profile-img' src='<%= element.image %>' />
             </div>
         </div>
