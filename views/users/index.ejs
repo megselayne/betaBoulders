@@ -2,34 +2,23 @@
 <div class ='profile-name'>
     <h2><%= data.user.username %>'s Routes</h2>
 </div>
-<div class='profile-container'>
+<div class='profile-row'>
     <% data.routes.map((element) => { %>
-        <div class='profile-row'>
-            <div class='profile-column'>
-                <h2 class='margin-fix'><%= element.name %></h2>
-                <h3 class='margin-fix'><%= element.rating %></h2>
-                <div class='row'>
-                    <button class='click primary'>
-                        <a class='secondary-text' href='userRoute/edit/<%= element.id %>'>Edit</a>
-                    </button>
-                    <form method="POST" action="/userRoute/<%= element.id %>?_method=DELETE">
-                        <input class='click primary' type="submit" value="Delete">
-                    </form>
-                </div>
-            </div>
-            <!-- <div class='profile-column'>
-                
-            </div> -->
             <div class='profile-column relative'>
-                <div class ='absolute'>
-                    <h2 class='margin-fix secondary-text'>Status:</h2>
-                    <h5 class='margin-fix secondary-text'><%= element.status %></h2>
-                    <h2 class='margin-fix secondary-text'>Notes:</h2>
-                    <h5 class='margin-fix'><%= element.notes %></h2>
-                </div>
                 <img class='profile-img' src='<%= element.image %>' />
+                <div class='overlay'> </div>
+                <div class ='absolute'>
+                    <h2 class='margin-fix secondary-text'><%= element.name %></h2>
+                    <h3 class='margin-fix secondary-text'><%= element.rating %></h2>
+                    <div class='row'>
+                        <h3 class='margin-fix secondary-text'>Status:</h2>
+                        <h4 class='margin-fix secondary-text'><%= element.status %></h2>
+                    </div>
+                    <h2 class='margin-fix secondary-text'>Notes:</h2>
+                    <h5 class='margin-fix secondary-text'><%= element.notes %></h2>
+                </div>
             </div>
-        </div>
+        <!-- </div> -->
    <% }) %>
 </div>    
 
