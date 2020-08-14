@@ -18,7 +18,7 @@ header,footer{
 .container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-grow:1;
 }
@@ -85,6 +85,11 @@ img{
 .big{
     padding: 1em 2em;
 }
+.CTA-row{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+}
 table{
     width:70%;
     max-width: 700px;
@@ -120,9 +125,12 @@ tr:nth-child(even) {
     flex-direction: row;
     flex-wrap: wrap;
 }
-/* .profile-container{
-    margin: 10px;
-} */
+.row-left{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 95vw;
+}
 .profile-row{
     display:flex;
     flex-direction: row;
