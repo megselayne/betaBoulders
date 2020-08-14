@@ -39,10 +39,13 @@ const climbingRouteController ={
     update(req, res, next) {
         ClimbingRoute.getById(req.params.id)
         .then((climb) => {
+            console.log('got by id promise');
+            console.log(req.body);
             return climb.update(req.body);
         })
         .then((updatedClimb) => {
-            res.redirect(`routes/${updatedClimb.id}`)
+            console.log('made it to update section');
+            res.redirect(`/routes/${updatedClimb.id}`)
         })
         .catch(next);
     },

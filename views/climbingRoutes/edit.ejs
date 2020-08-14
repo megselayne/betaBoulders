@@ -1,6 +1,6 @@
 <%- include('../partials/boilerplate') %>
 
-    <form class ='margin-top' method ='POST'action='/climb/<%= climb.id %>?_method=PUT'>
+    <form class='margin-top ' method="POST" action="/routes/<%= climb.id %>?_method=PUT">
         <input type='text' name='name' placeholder='Name' value='<%= climb.name %>' />
         <input type='text' name='type' placeholder='Boulder, Sport, Trad' value='<%= climb.type %>'  />
         <input type='text' name='rating' placeholder='Rating' value='<%= climb.rating %>' />
