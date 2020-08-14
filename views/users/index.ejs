@@ -5,7 +5,9 @@
 <div class='profile-row'>
     <% data.routes.map((element) => { %>
             <div class='profile-column relative'>
-                <img class='profile-img' src='<%= element.image %>' />
+                <!-- <a href='userRoute/<%= element.id %>'> -->
+                    <img class='profile-img' src='<%= element.image %>' />
+                <!-- </a> -->
                 <div class='overlay'> </div>
                 <div class ='absolute'>
                     <h2 class='margin-fix secondary-text'><%= element.name %></h2>
@@ -14,11 +16,8 @@
                         <h3 class='margin-fix secondary-text'>Status:</h2>
                         <h4 class='margin-fix secondary-text'><%= element.status %></h2>
                     </div>
-                    <h2 class='margin-fix secondary-text'>Notes:</h2>
-                    <h5 class='margin-fix secondary-text'><%= element.notes %></h2>
                 </div>
             </div>
-        <!-- </div> -->
    <% }) %>
 </div>    
 
