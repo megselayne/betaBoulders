@@ -75,7 +75,6 @@ class UserRoutes {
             FROM user_routes
             WHERE user_id = $1
             GROUP BY status
-            ORDER BY status DESC
             `, id
         )
         .then((userStats) => {

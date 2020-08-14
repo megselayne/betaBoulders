@@ -15,6 +15,7 @@ userRouteRouter.get('/edit/:id([0-9]+)', userRoutesController.show, (req, res) =
     res.render('users/edit', {
         user: req.user,
         userRoute: res.locals.userRoute,
+        status: ['projecting','sent','not sent']
     });
 });
 userRouteRouter.put('/:id([0-9]+)', userRoutesController.update);
