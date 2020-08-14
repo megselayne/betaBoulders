@@ -6,16 +6,20 @@ const authHelpers = require('../services/auth/auth-helpers');
 climbingRouter.get('/', climbingRouteController.index);
 climbingRouter.get('/:id([0-9]+)', climbingRouteController.show, (req, res) => {
     res.render('climbingRoutes/show', {
+        user: req.user,
         climb: res.locals.climb,
     });
 });
 climbingRouter.get('/add', authHelpers.loginRequired, (req, res) =>{
-    res.render('climbingRoutes/add');
+    res.render('climbingRoutes/add', {
+        user: req.user
+    });
 })
 climbingRouter.get('/:id([0-9]+)/edit',
     authHelpers.loginRequired,
     climbingRouteController.show, (req, res) => {
         res.render('climbingRoutes/edit', {
+            user: req.user,
             climb: res.locals.climb,
         });
 });

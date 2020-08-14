@@ -15,9 +15,15 @@
                 <li>
                     <a class='secondary-text' id ='profile' href='/user'>Profile</a>
                 </li>
-                <li>
-                    <a class='secondary-text' id ='logout' href='/auth/logout'>Log Out</a>
-                </li>
+                <% if(user) { %>
+                    <li>
+                        <a class='secondary-text' id ='logout' href='auth/logout'>Log Out</a>
+                    </li>
+               <% } else { %>
+                    <li>
+                        <a class='secondary-text' id ='login' href='auth/login'>Log In</a>
+                    </li>
+              <% } %>
             </ul>
         </nav>
     </div>  

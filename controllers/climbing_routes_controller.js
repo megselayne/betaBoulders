@@ -6,7 +6,7 @@ const climbingRouteController ={
         .then((climbs) => {
             console.log(climbs);
             res.render('climbingRoutes/index', {
-                message: 'ok',
+                user: req.user,
                 data: { climbs },
             });
         })

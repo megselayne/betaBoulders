@@ -5,7 +5,9 @@ const authHelpers = require('../services/auth/auth-helpers');
 const passport = require('../services/auth/local');
 
 authRouter.get('/login', authHelpers.loginRedirect, (req, res) => {
-    res.render('auth/login');
+    res.render('auth/login',{
+        user: req.user
+    });
 });
 authRouter.post('/login', passport.authenticate('local', {
     successRedirect: '/user',

@@ -8,9 +8,10 @@ const usersController = {
       .then((routes) => {
         console.log(routes);
         res.render('users/index',{
+          user: req.user,
           data: {
             user: req.user,
-            routes
+            routes  
           },
         })
         
@@ -29,7 +30,9 @@ const usersController = {
         .then((user) => {
             req.login(user, (err) => {
                 if (err) return next(err);
-                res.redirect('/user');
+                res.redirect('/user',{
+                  user: req.user
+                })
             });
         })
         .catch(next);
