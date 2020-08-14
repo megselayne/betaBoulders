@@ -5,7 +5,7 @@ console.log('main.js is connected!');
 const home = document.querySelector('#home');
 const routes = document.querySelector('#routes');
 const profile = document.querySelector('#profile');
-const logout = document.querySelector('#logout');
+const logout = document.querySelector('#log');
 let activate = null;
 //functions
 
