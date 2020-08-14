@@ -20,7 +20,23 @@ class UserRoutes {
         return db.manyOrNone(`SELECT * FROM user_routes WHERE user_id = $1`, id)
     }
     static getByRouteId(id){
-        return db.oneOrNone(`SELECT * FROM user_routes WHERE id = $1`, id)
+            return db.oneOrNone(`
+            SELECT
+                user_routes.id,
+                user_routes.user_id,
+                user_routes.route_id,
+                climbing_routes.name,
+                climbing_routes.type,
+                climbing_routes.rating,
+                climbing_routes.image,
+                climbing_routes.longitude,
+                climbing_routes.latitude,
+                user_routes.status,
+                user_routes.notes
+            FROM user_routes
+            LEFT JOIN climbing_routes
+            ON climbing_routes.id = user_routes.route_id
+            WHERE user_routes.id = $1`,id)
         .then((userRoute) => {
             if(userRoute) return new this(userRoute);
             throw new Error('User route not found');
