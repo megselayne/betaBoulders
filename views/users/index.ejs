@@ -1,6 +1,14 @@
 <%- include('../partials/boilerplate') %>
 <div class ='row-left'>
-    <h2><%= data.user.username %>'s Routes</h2>
+    <h2><%= data.user.username.toUpperCase() %>'S ROUTES</h2>
+</div>
+<div class ='row-left'>
+    <% data.userStats.map((element) => { %>
+        <div class='stats'>
+            <h3><%= element.status.toUpperCase() %>:</h3>
+            <h3><%= element.count_routes %></h4>
+        </div>
+   <% }) %>
 </div>
 <div class='profile-row'>
     <% data.routes.map((element) => { %>

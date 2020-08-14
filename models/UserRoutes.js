@@ -67,6 +67,21 @@ class UserRoutes {
             })
         })
     }
+    static getStatsByUserId(id) {
+        return db.manyOrNone(
+            `SELECT
+                COUNT(*) as count_routes,
+                status
+            FROM user_routes
+            WHERE user_id = $1
+            GROUP BY status
+            ORDER BY status DESC
+            `, id
+        )
+        .then((userStats) => {
+            return userStats;
+        })
+    }
 
     save() {
         return db.one(

@@ -125,6 +125,13 @@ tr:nth-child(even) {
     flex-direction: row;
     flex-wrap: wrap;
 }
+.stats{
+    display: flex;
+    margin-right: 15px;
+}
+.stats > h3{
+    margin-right: 5px;
+}
 .row-left{
     display: flex;
     flex-direction: row;

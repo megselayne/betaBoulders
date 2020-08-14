@@ -6,13 +6,18 @@ const usersController = {
     index(req, res, next) {
       UserRoutes.getAllByUserId(req.user.id)
       .then((routes) => {
-        console.log(routes);
-        res.render('users/index',{
-          user: req.user,
-          data: {
+        UserRoutes.getStatsByUserId(req.user.id)
+        .then((userStats) => {
+          console.log(userStats);
+          res.render('users/index',{
             user: req.user,
-            routes  
-          },
+            data: {
+              user: req.user,
+              routes,
+              userStats
+            },
+          })
+
         })
         
       })
