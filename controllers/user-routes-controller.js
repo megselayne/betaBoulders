@@ -25,7 +25,11 @@ const userRoutesController = {
     update(req, res, next) {
         UserRoutes.getByRouteId(req.params.id)
         .then((userRoute) => {
+            console.log('got to update');
             return userRoute.update(req.body);
+        })
+        .then((updatedRoute) => {
+            res.redirect(`/userRoute/${updatedRoute.id}`)
         })
         .catch(next);
     },

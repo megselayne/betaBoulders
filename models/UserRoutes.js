@@ -101,7 +101,7 @@ class UserRoutes {
     update(changes) {
         Object.assign(this, changes);
         return db.oneOrNone(`
-        UPDATE user_routes
+        UPDATE user_routes SET
             status = $/status/,
             notes = $/notes/
         WHERE id = $/id/
@@ -109,6 +109,7 @@ class UserRoutes {
         `, this
         )
         .then((userRoute) => {
+            console.log('got to assign state');
             return Object.assign(this, userRoute);
         });
     }
