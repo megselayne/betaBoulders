@@ -1,21 +1,29 @@
 <%- include('../partials/boilerplate') %>
 
-<div class='main-column'>
+<div class='main-column padding'>
     <div class='row'>
         <div class ='main-column'>
             <div class='route-group'>
                 <div class='route-name'>
                     <h2><%= userRoute.name %></h2>
                 </div>
-                <div class='route-sub'>
-                    <h3><%= userRoute.type %></h3>
-                    <h3><%= userRoute.rating %></h3>
+                <div class='row'>
+                    <div class='row'>
+                        <h3><%= userRoute.type %></h3>
+                    </div>
+                    <div class='row'>
+                        <h3><%= userRoute.rating %></h3>
+                    </div>
                 </div>
-                <div class='route-sub'>
-                    <h3><%= userRoute.latitude %></h3>
-                    <h3><%= userRoute.longitude %></h3>
+                <div class='row'>
+                    <div class='row'>
+                        <h6>Lat: <%= userRoute.latitude %></h3>
+                    </div>
+                    <div class='row'>
+                        <h6>Long: <%= userRoute.longitude %></h3>
+                    </div>
                 </div>
-                <div class='route-sub'>
+                <div class='row'>
                     <h3><%= userRoute.status %></h3>
                     <h3><%= userRoute.notes %></h3>
                 </div>
@@ -27,7 +35,7 @@
             <% } %>  
         </div>
     </div>
-    <div class='row'>
+    <div class='row padding'>
         <button class='click big primary'>
             <a class='secondary-text' href='/user'>Your Climbs</a>
         </button>

@@ -1,36 +1,48 @@
 <%- include('../partials/boilerplate') %>
-<div class='CTA-row'>
-    <button class='click secondary'>
-        <a class='secondary-text' href='/routes/add'>Add New Route</a>
-    </button>
-</div>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Rating</th>
-            <th>Add to Profile</th>
-        </tr>
-        <% data.climbs.map((element) => { %>
+    <div class='CTA-row'>
+        <button class='click secondary'>
+            <a class='secondary-text' href='/routes/add'>Add New Route</a>
+        </button>
+    </div>
+    <!-- <div class='CTA-row'>
+        <form>
+            <label for='type'>Filter by Type:</label>
+            <select name='type' id='type'>
+                <option value='All'>All</option>
+                <option value='Boulder'>Boulder</option>
+                <option value='Trad'>Trad</option>
+                <option value='Boulder'>Sport</option>
+            </select>
+        </form>
+    </div> -->
+        <table>
             <tr>
-                <td>
-                    <a class='primary-text' href='/routes/<%= element.id %>'> <%= element.name %> </a>
-                </td>
-                <td>
-                    <%= element.type %>
-                </td>
-                <td>
-                    <%= element.rating %>
-                </td>
-                <td>
-                    <form method="POST" action="/userRoute/<%= element.id %>">
-                        <input class='click big primary' type="submit" value="Add">
-                    </form>
-                </td>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Rating</th>
+                <th>Add to Profile</th>
             </tr>
+            
+            <% data.climbs.map((element) => { %>
+                <tr>
+                    <td>
+                        <a class='primary-text' href='/routes/<%= element.id %>'> <%= element.name %> </a>
+                    </td>
+                    <td>
+                        <%= element.type %>
+                    </td>
+                    <td>
+                        <%= element.rating %>
+                    </td>
+                    <td>
+                        <form method="POST" action="/userRoute/<%= element.id %>">
+                            <input class='click big primary' type="submit" value="Add">
+                        </form>
+                    </td>
+                </tr>
 
-        <% }) %>
-    </table>   
+            <% }) %>
+        </table>   
 
 
 

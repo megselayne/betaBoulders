@@ -22,6 +22,9 @@ header,footer{
     align-items: center;
     flex-grow:1;
 }
+.padding{
+    padding-top: 5em;
+}
 .header-container{
     width: 90vw;
     display: flex;
@@ -73,6 +76,10 @@ img{
     height: 20em;
     width:auto;
 }
+.show-img{
+    height: 12em;
+    width:auto;
+}
 .click{
     /* background-color: #fca311; */
     margin: .25em;
@@ -106,13 +113,16 @@ tr:nth-child(even) {
 .row{
     display:flex;
     flex-direction: row;
+    margin-right: 7px;
+    flex-wrap: wrap;
 
 }
 .col-row{
     display:flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 60vw;
+    align-items: center;
+    width: 80vw;
 }
 .main-column{
     display:flex;

@@ -1,38 +1,47 @@
 <%- include('../partials/boilerplate') %>
-    <div class='col-row'>
-    <div class ='main-column'>
-        <div class='route-group'>
-            <div class='route-name'>
-                <h2><%= climb.name %></h2>
-            </div>
-            <div class='route-sub'>
-                <h3><%= climb.type %></h3>
-                <h3><%= climb.rating %></h3>
-            </div>
-            <div class='route-sub'>
-                <h3><%= climb.latitude %></h3>
-                <h3><%= climb.longitude %></h3>
+<div class='main-column padding'>
+    <div class='row'>
+        <div class ='main-column'>
+            <div class='route-group'>
+                <div class='route-name'>
+                    <h2><%= climb.name %></h2>
+                </div>
+                <div class=row>
+                    <div class='row'>
+                        <h3><%= climb.type %></h3>
+                    </div>
+                    <div class='row'>
+                        <h3><%= climb.rating %></h3>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='row'>
+                        <h6>Lat: <%= climb.latitude %></h3>
+                    </div>
+                    <div class='row'>
+                        <h6>Long: <%= climb.longitude %></h3>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class='route-buttons'>
-            <button class='click big primary'>
-                <a class='secondary-text' href='/routes'>All Climbs</a>
-            </button>
-            <button class='click big primary'>
-                <a class='secondary-text' href='/routes/<%= climb.id %>/edit'>Edit</a>
-            </button>
-            <form method="POST" action="/routes/<%= climb.id %>?_method=DELETE">
-                <input class='click big primary' type="submit" value="Delete">
-            </form>
+        <div class ='main-column'>
+            <% if(climb.image) { %>
+                <img class='climb-img' src='<%= climb.image %>'>
+            <% } %>  
         </div>
     </div>
-    <div class ='main-column'>
-        <% if(climb.image) { %>
-            <img class='climb-img' src='<%= climb.image %>'>
-        <% } %>  
+    <div class='row padding'>
+        <button class='click big primary'>
+            <a class='secondary-text' href='/routes'>All Climbs</a>
+        </button>
+        <button class='click big primary'>
+            <a class='secondary-text' href='/routes/<%= climb.id %>/edit'>Edit</a>
+        </button>
+        <form method="POST" action="/routes/<%= climb.id %>?_method=DELETE">
+            <input class='click big primary' type="submit" value="Delete">
+        </form>
     </div>
 
 </div>
-
 
 <%- include('../partials/end') %>

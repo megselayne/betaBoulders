@@ -68,3 +68,6 @@ Find, save, edit, delete climbing routes
 
 ## Links and Resources
 - Mountain Project API [here](https://www.mountainproject.com/data)
+
+## Future improvements
+- I attempted to allow users to upload images for new climbing routes, but didn't fix all crinkles in the implementation. I preserved the middleware, but not the routes in services/cloudinary-helpers.js. I would really like to get this working as an improvement.

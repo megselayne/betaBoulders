@@ -1,7 +1,10 @@
 const ClimbingRoute = require('../models/Climbing_Route');
+const url = require('url');
+const querystring = require('querystring');
 
 const climbingRouteController ={
     index(req, res, next) {
+        console.log(req.query);
         ClimbingRoute.getAll()
         .then((climbs) => {
             console.log(climbs);
