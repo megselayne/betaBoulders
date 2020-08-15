@@ -5,11 +5,7 @@ const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
-const multer = require('multer');
-const config = require('cloudinary');
-const uploader = require('cloudinary');
-const storage = multer.memoryStorage();
-const multerUploads = multer({ storage }).single('image');
+const cloudinaryHelpers = require('./services/cloudinary-helpers');
 
 //routers here
 const climbingRouter = require('./routes/climbing-router');
@@ -60,7 +56,7 @@ app.get('/' ,(req, res) => {
 });
 
 //testing cloudinary post
-app.post('/upload', multerUploads, (req, res) => {
+app.post('/upload', cloudinaryHelpers.multerUploads, (req, res) => {
     console.log(req.file);
     });
 
