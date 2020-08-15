@@ -5,7 +5,6 @@ const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
-const cloudinaryHelpers = require('./services/cloudinary-helpers');
 
 //routers here
 const climbingRouter = require('./routes/climbing-router');
@@ -55,17 +54,12 @@ app.get('/' ,(req, res) => {
     });
 });
 
-//testing cloudinary post
-app.post('/upload', cloudinaryHelpers.multerUploads, (req, res) => {
-    console.log(req.file);
-    });
 
 //app.use rotuers
 app.use('/routes', climbingRouter);
 app.use('/auth', authRouter);
 app.use('/userRoute', userRouteRouter);
 app.use('/user', userRouter);
-
 
 app.use('*', (req,res) =>{
     res.status(404).send('Not Found');
