@@ -5,6 +5,11 @@ const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
+const multer = require('multer');
+const config = require('cloudinary');
+const uploader = require('cloudinary');
+const storage = multer.memoryStorage();
+const multerUploads = multer({ storage }).single('image');
 
 //routers here
 const climbingRouter = require('./routes/climbing-router');
@@ -34,6 +39,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 //views
 app.set('views','views');
 app.set('view engine', 'ejs');
@@ -45,12 +51,18 @@ app.listen(PORT, () => {
     console.log(`listening on port ${PORT}`);
 });
 
+//home page
 app.get('/' ,(req, res) => {
     res.render('index',{
         appName: 'BetaBoulders',
         user: req.user
     });
 });
+
+//testing cloudinary post
+app.post('/upload', multerUploads, (req, res) => {
+    console.log(req.file);
+    });
 
 //app.use rotuers
 app.use('/routes', climbingRouter);
@@ -70,3 +82,4 @@ app.use((err, req, res, next) => {
         stack: err.stack,
     });
 });
+
