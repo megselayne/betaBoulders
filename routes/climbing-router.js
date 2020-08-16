@@ -23,8 +23,8 @@ climbingRouter.get('/:id([0-9]+)/edit',
             climb: res.locals.climb,
         });
 });
-
-// climbingRouter.post('/',climbingRouteController.create);
+climbingRouter.post('/?', climbingRouteController.index);
+climbingRouter.post('/',climbingRouteController.create);
 climbingRouter.put('/:id([0-9]+)', climbingRouteController.update);
 climbingRouter.delete('/:id([0-9]+)', 
     authHelpers.loginRequired, 

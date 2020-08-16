@@ -4,13 +4,14 @@ const querystring = require('querystring');
 
 const climbingRouteController ={
     index(req, res, next) {
-        console.log(req.query);
+        console.log(req.body.type);
         ClimbingRoute.getAll()
         .then((climbs) => {
             console.log(climbs);
             res.render('climbingRoutes/index', {
                 user: req.user,
                 data: { climbs },
+                results: req.body
             });
         })
         .catch(next);
