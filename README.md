@@ -48,23 +48,27 @@ Find, save, edit, delete climbing routes
 ## CRUD Routes
 |User Story|Route|
 |-|-|
-|See all routes|`GET /routes`|
+|See all climbs|`GET /routes`|
 |See route details|`GET /routes/:id`|
-|Edit a route|`PUT /routes/:id`|
-|Add a route|`POST /routes`|
+|Access edit a climb form|`GET /routes/edit/:id`|
+|Edit a climb|`PUT /routes/:id`|
+|Add a climb|`POST /routes`|
 |Delete a route|`DELETE /routes/:id`|
-|Access create account page|`GET /users/new`|
-|Create an account|`POST /users`|
+|Access create account page|`GET /user/new`|
+|Create an account|`POST /user`|
 |Access log in page|`GET /auth/login`|
 |Log in|`POST /auth/login`|
-|Save route to profile|`POST /users/:id/user_routes`|
+|Save route to profile|`POST /userRoutes`|
+|See details on your climb|`GET /userRoutes/:id`|
+|Access edit your climb form|`GET /userRoutes/edit/:id`|
+|Delete a climb from profile|`DELETE /userRoutes/:id`|
 |Log out|`GET /auth/logout`|
 
 ## Notes on Deployment
 - Application will be deployed on Heroku
 - `db/migrations` files must be run in Heroku bash to set up tables.
 - `seed.js` must be run in Heroku bash to seed the `climbing_routes` table from Mountain Project's API.
-- The `SECRET_KEY` in `seed.js` is supressed in an `.env`. You will need to request your own credentials from Mountain Project and add the key in your own `.env` file.
+- The `MOUNTAIN_PROJECT_API_KEY` in `seed.js` is supressed in an `.env`. You will need to request your own credentials from Mountain Project and add the key in your own `.env` file.
 
 ## Links and Resources
 - Mountain Project API [here](https://www.mountainproject.com/data)

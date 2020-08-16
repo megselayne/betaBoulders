@@ -27,6 +27,7 @@ header,footer{
 }
 .header-container{
     width: 90vw;
+    height:8vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -36,7 +37,7 @@ header,footer{
 .cover{
     background-image: url('../imgs/pexels-eberhard-grossgasteiger-673018.jpg');
     background-size: cover;
-    height:93vh;
+    height:92vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -199,10 +200,10 @@ input[type=text], input[type=password], input[type=email]{
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
+}
 footer{
     font-family: sans-serif;
-    height: 80px;
+    height: 8vh;
     text-align: center;
     display:flex;
     flex-direction: row;
