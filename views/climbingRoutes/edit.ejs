@@ -1,0 +1,13 @@
+<%- include('../partials/boilerplate') %>
+
+    <form class='margin-top ' method="POST" action="/routes/<%= climb.id %>?_method=PUT">
+        <input type='text' name='name' placeholder='Name' value='<%= climb.name %>' />
+        <input type='text' name='type' placeholder='Boulder, Sport, Trad' value='<%= climb.type %>'  />
+        <input type='text' name='rating' placeholder='Rating' value='<%= climb.rating %>' />
+        <input type='text' name='latitude' placeholder='latitude' value='<%= climb.latitude %>' />
+        <input type='text' name='longitude' placeholder='longitude' value='<%= climb.longitude %>' />
+        <input class='click big primary' type='submit' value='Edit Climb' />
+    </form>
+
+
+<%- include('../partials/end') %>

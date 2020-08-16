@@ -1,0 +1,57 @@
+<%- include('../partials/boilerplate') %>
+    <div class='CTA-row'>
+        <button class='click secondary'>
+            <a class='secondary-text' href='/routes/add'>Add New Route</a>
+        </button>
+    </div>
+    <div class='CTA-row'>
+        <form method='POST' id='filter-value' action='/routes?'>
+            <label for='type'>Filter by Type:</label>
+            <select name='type' id='type'>
+                <option value='All'>All</option>
+                <option value='Boulder'>Boulder</option>
+                <option value='Trad'>Trad</option>
+                <option value='Sport'>Sport</option>
+            </select>
+            <input type='submit' value='filter'>
+        </form>
+    </div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Rating</th>
+                <th>Add to Profile</th>
+            </tr>
+            <% const filtered = data.climbs.filter((element) =>{ %>
+                <% if(results.type === 'All' || !results.type){ %>
+                    <% return element %>
+                <% } else {  %>
+                    <% return element.type === results.type %>
+                <% } %>
+            <% }) %>
+            
+            <% filtered.map((element) => { %>
+                <tr>
+                    <td>
+                        <a class='primary-text' href='/routes/<%= element.id %>'> <%= element.name %> </a>
+                    </td>
+                    <td>
+                        <%= element.type %>
+                    </td>
+                    <td>
+                        <%= element.rating %>
+                    </td>
+                    <td>
+                        <form method="POST" action="/routes/<%= element.id %>">
+                            <input class='click big primary' type="submit" value="Add">
+                        </form>
+                    </td>
+                </tr>
+
+            <% }) %>
+        </table>   
+
+
+        <script src='/src/dropdown.js'></script>
+<%- include('../partials/end') %>
