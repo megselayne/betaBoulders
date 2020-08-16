@@ -1,18 +1,16 @@
 //requires
 require('dotenv').config();
 const fetch = require('node-fetch');
-const db = require('./db/config');
+const db = require('./config');
 
-const ClimbingRoute = require('./models/Climbing_Route');
+const ClimbingRoute = require('../models/Climbing_Route');
 
 const url = 'https://www.mountainproject.com/data/get-routes-for-lat-lon';
 //this lat long is for Joshua tree, where there are a lot of boulders
 let lat='33.8734';
 let lon = '-115.9010';
 let key = process.env.MOUNTAIN_PROJECT_API_KEY;
-let maxResults = '100';
-// let maxDistance = '200';
-// &maxDistance=${maxDistance}
+let maxResults = '200';
 const routes = ()=>{
     const result = fetch(`${url}?lat=${lat}&lon=${lon}&maxResults=${maxResults}&key=${key}`);
     result.then((res)=>{
