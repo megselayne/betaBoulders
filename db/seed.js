@@ -10,7 +10,7 @@ const url = 'https://www.mountainproject.com/data/get-routes-for-lat-lon';
 let lat='33.8734';
 let lon = '-115.9010';
 let key = process.env.MOUNTAIN_PROJECT_API_KEY;
-let maxResults = '50';
+let maxResults = '100';
 // let maxDistance = '200';
 // &maxDistance=${maxDistance}
 const routes = ()=>{
