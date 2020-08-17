@@ -25,7 +25,9 @@ const userRoutesController = {
     update(req, res, next) {
         UserRoutes.getByRouteId(req.params.id)
         .then((userRoute) => {
-            console.log('got to update');
+            console.log('got to update--------------------');
+            console.log(userRoute);
+            console.log(req.body);
             return userRoute.update(req.body);
         })
         .then((updatedRoute) => {

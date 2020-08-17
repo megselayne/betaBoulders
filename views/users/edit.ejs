@@ -1,8 +1,8 @@
 <%- include('../partials/boilerplate') %>
 
     <form class ='margin-top' method ='POST'action='/userRoute/<%= userRoute.id %>?_method=PUT'>
-        <input type='text' name='latitude' placeholder='status' value='<%= userRoute.status %>' />
-        <input type='text' name='longitude' placeholder='notes' value='<%= userRoute.notes %>' />
+        <input type='text' name='status' placeholder='status' value='<%= userRoute.status %>' />
+        <input type='text' name='notes' placeholder='notes' value='<%= userRoute.notes %>' />
         <input class='click big primary' type='submit' value='Edit Climb' />
     </form>
 
