@@ -35,9 +35,7 @@ const usersController = {
         .then((user) => {
             req.login(user, (err) => {
                 if (err) return next(err);
-                res.redirect('/user',{
-                  user: req.user
-                })
+                res.redirect('/user')
             });
         })
         .catch(next);
